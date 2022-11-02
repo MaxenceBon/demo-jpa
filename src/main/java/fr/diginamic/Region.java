@@ -10,45 +10,50 @@ import javax.persistence.Table;
 
 public class Region {
 
-@Id
-private Integer id;
+	@Id
+	private Integer id;
 
-@Column (name = "nom", length = 20)
-private String nom;
+	@Column(name = "nom", length = 20)
+	private String nom;
 
-public Region() {
-	
-}
+	public Region() {
 
-/** Getter pour nom
- * @return the nom
- */
-public String getNom() {
-	return nom;
-}
+	}
 
-/** Setter pour nom
- * @param nom the nom to set
- */
-public void setNom(String nom) {
-	this.nom = nom;
-}
+	/**
+	 * Getter pour nom
+	 * 
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
 
-/** Getter pour id
- * @return the id
- */
-public Integer getId() {
-	return id;
-}
+	/**
+	 * Setter pour nom
+	 * 
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
-/** Setter pour id
- * @param id the id to set
- */
-public void setId(Integer id) {
-	this.id = id;
-}
-	
+	/**
+	 * Getter pour id
+	 * 
+	 * @return the id
+	 */
+	public Integer getId() {
+		return id;
+	}
 
+	/**
+	 * Setter pour id
+	 * 
+	 * @param id the id to set
+	 */
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-	
 }
