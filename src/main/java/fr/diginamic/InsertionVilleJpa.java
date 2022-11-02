@@ -1,9 +1,10 @@
-package main;
+package fr.diginamic;
 
-public class main {
+public class InsertionVilleJpa {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 	}
 
 }
