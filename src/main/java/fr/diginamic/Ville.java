@@ -4,8 +4,14 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Generated;
 
 @Entity
 @Table(name = "villes")
@@ -13,27 +19,24 @@ import javax.persistence.Table;
 public class Ville {
 
 	@Id
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
 	@Column(name = "NOM", length = 100, nullable = false, unique = false)
 	private String nom;
 
-	@Column(name = "CODE-POSTAL", nullable = false, unique = false)
-	private int codePostal;
+	@Column(name = "CODE_POSTAL", length = 50, nullable = false, unique = false)
+	private Integer codePostal;
 
-	@Column(name = "DERNIER-RECENSEMENT", nullable = false, unique = false)
+	@Column(name = "DERNIER_RECENSEMENT", length = 50, nullable = false, unique = false)
 	private Date dateDernierRecensement;
 
-	@Column(name = "CATEGORIE", nullable = true, unique = false)
+	@Column(name = "CATEGORIE", length = 50, nullable = true, unique = false)
+	@Enumerated(EnumType.STRING)
 	private Categorie categorie;
 
-	public Ville(int id, String nom, int codePostal, Date dateDernierRecensement, Categorie categorie) {
-		super();
-		this.id = id;
-		this.nom = nom;
-		this.codePostal = codePostal;
-		this.dateDernierRecensement = dateDernierRecensement;
-		this.categorie = categorie;
+	public Ville() {
+
 	}
 
 	/**
@@ -108,4 +111,20 @@ public class Ville {
 		this.dateDernierRecensement = dateDernierRecensement;
 	}
 
+	/** Getter pour categorie
+	 * @return the categorie
+	 */
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	/** Setter pour categorie
+	 * @param categorie the categorie to set
+	 */
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+	
+	
 }

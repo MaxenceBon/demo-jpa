@@ -13,16 +13,21 @@ public class InsertionVilleJpa {
 		// TODO Auto-generated method stub
 
 		
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("villes");
-		EntityManager em = entityManagerFactory.createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Recensement");
+		EntityManager villeManager = entityManagerFactory.createEntityManager();
+		EntityTransaction transaction = villeManager.getTransaction();
 		transaction.begin();
 		
-		Ville nantes = new Ville(1, "Nantes", 44000, new Date() , Categorie.GRANDE);
-		Ville stNazaire = new Ville(2, "Saint Nazaire", 44100, new Date() , Categorie.MOYENNE);
+		Ville nantes = new Ville();
+		nantes.setNom("Nantes");
+//		nantes.setId(3);
+		nantes.setCodePostal(44000);
+		nantes.setDateDernierRecensement(new Date());
+		nantes.setCategorie(Categorie.GRANDE);
+//		Ville stNazaire = new Ville(2, "Saint Nazaire", 44100, new Date() , Categorie.MOYENNE);
 		
-		em.persist(nantes);
-		em.persist(stNazaire);
+		villeManager.persist(nantes);
+//		em.persist(stNazaire);
 		
 		transaction.commit();
 		

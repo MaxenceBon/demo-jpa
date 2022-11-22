@@ -16,8 +16,8 @@ public class ConnexionJpa {
 		transaction.begin();
 		
 		Region r = new Region();
-		r.setNom("Occitanie");
-		r.setId(1);
+		r.setNom("Picardie");
+		r.setId(2);
 		em.persist(r);
 		
 		transaction.commit();
