@@ -12,7 +12,6 @@ public class InsertionVilleJpa {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Recensement");
 		EntityManager villeManager = entityManagerFactory.createEntityManager();
 		EntityTransaction transaction = villeManager.getTransaction();
@@ -24,9 +23,9 @@ public class InsertionVilleJpa {
 		nantes.setCodePostal(44000);
 		nantes.setDateDernierRecensement(new Date());
 		nantes.setCategorie(Categorie.GRANDE);
-//		Ville stNazaire = new Ville(2, "Saint Nazaire", 44100, new Date() , Categorie.MOYENNE);
+		Ville stNazaire = new Ville("Saint Nazaire", 44100, new Date() , Categorie.MOYENNE);
 		
-		villeManager.persist(nantes);
+		villeManager.persist(stNazaire);
 //		em.persist(stNazaire);
 		
 		transaction.commit();

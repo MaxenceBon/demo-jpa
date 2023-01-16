@@ -1,6 +1,5 @@
 package fr.diginamic;
 
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -35,7 +34,14 @@ public class Ville {
 	private Categorie categorie;
 
 	public Ville() {
-
+		
+	}
+	
+	public Ville(String nom, Integer codePostal, Date dateDernierRecensement, Categorie categorie) {
+		this.nom=nom;
+		this.codePostal=codePostal;
+		this.dateDernierRecensement=dateDernierRecensement;
+		this.categorie=categorie;
 	}
 
 	/**
