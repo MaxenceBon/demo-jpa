@@ -5,6 +5,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import net.bytebuddy.asm.Advice.This;
+
 public class biblioJpa {
 
 	public static void main(String[] args) {
@@ -15,15 +17,19 @@ public class biblioJpa {
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		
-//		Livre livre = new Livre();
-//		livre.setId(1);
-//		livre.setTitre("machin");
-//		livre.setAuteur("truc");
-//		em.persist(livre);
-//		transaction.commit();
+		Livre livre = new Livre();
+		livre.setId(6);
+		livre.setTitre("machin");
+		livre.setAuteur("truc");
+		em.persist(livre);
+		transaction.commit();
 		
 		Livre livre1 = em.find(Livre.class,1);
 		System.out.println(livre1.getAuteur());
+		
+		Client client1 = em.find(Client.class, 3);
+		System.out.println(client1.getNom()+" "+client1.getPrenom());
+		
 //		Livre l = em.find(Livre.class, 4);
 //		livre1.setTitre("supertruc");
 //		em.remove(l);
