@@ -30,11 +30,11 @@ public class Livre {
 	private String auteur;
 	
 	
-//	@ManyToMany
-//	@JoinTable(name = "COMPO", 
-//				joinColumns = @JoinColumn(name= "ID_LIV", referencedColumnName = "ID"),
-//				inverseJoinColumns = @JoinColumn(name = "ID_EMP", referencedColumnName = "ID"))
-//	private List<Emprunt> emprunts = new ArrayList<Emprunt>();
+	@ManyToMany
+	@JoinTable(name = "COMPO", 
+				joinColumns = @JoinColumn(name= "ID_LIV", referencedColumnName = "ID"),
+				inverseJoinColumns = @JoinColumn(name = "ID_EMP", referencedColumnName = "ID"))
+	private List<Emprunt> emprunts = new ArrayList<Emprunt>();
 	
 	
 	

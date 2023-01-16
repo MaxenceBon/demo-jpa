@@ -15,19 +15,20 @@ public class biblioJpa {
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 		
-		Livre livre = new Livre();
+//		Livre livre = new Livre();
 //		livre.setId(1);
-		livre.setTitre("machin");
-		livre.setAuteur("truc");
+//		livre.setTitre("machin");
+//		livre.setAuteur("truc");
 //		em.persist(livre);
 //		transaction.commit();
 		
 		Livre livre1 = em.find(Livre.class,1);
-		Livre l = em.find(Livre.class, 4);
-		livre1.setTitre("supertruc");
-		em.remove(l);
-		em.persist(livre1);
-		transaction.commit();
+		System.out.println(livre1.getAuteur());
+//		Livre l = em.find(Livre.class, 4);
+//		livre1.setTitre("supertruc");
+//		em.remove(l);
+//		em.persist(livre1);
+//		transaction.commit();
 		
 //		Livre livre2 = em.find(Livre.class, 1);
 //		livre.setTitre("machinmachin");
